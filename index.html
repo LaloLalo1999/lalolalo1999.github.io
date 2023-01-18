@@ -1,0 +1,273 @@
+<!-- directives: [] -->
+<div id="content">
+  <ul>
+    <li>Interconexión de Redes
+      <ul>
+        <li>Ejemplo de Red
+          <ul>
+            <li><img src="../assets/image_1674062121934_0.png" title="image.png" /></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>IPv4
+          <ul>
+            <li>Son identificadores</li>
+            <li>Permiten para identificar los dispositivos que tienen conexiones a la red, si tienen una sola conexion a la red</li>
+            <li>Un dispositivo puede tener una, o varias direcciones IP, dependiendo de la cantidad de conexiones a la red</li>
+            <li>Reglas
+              <ul>
+                <li>Son Unicas</li>
+                <li>Son universales
+                  <ul>
+                    <li>Todos los dispositivos tienen que tener direccion IP</li>
+                  </ul>
+                </li>
+                <li>32 bits
+                  <ul>
+                    <li>Notacion decimal con puntos
+                      <ul>
+                        <li>1111 1111 - 1111 1100 - 0000 0001 - 1000 0000</li>
+                        <li>255.252.1.128</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>Tienen 2 partes
+                  <ul>
+                    <li>Red y Host</li>
+                  </ul>
+                </li>
+                <li>Son dependientes de la localización</li>
+                <li>Son jerarquicas
+                  <ul>
+                    <li>Subredes son pedacitos de una red mas grande</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>La primera ip de una red esta reservada a la red
+              <ul>
+                <li>Red R1
+                  <ul>
+                    <li>10.0.0.0 -&gt; Reservada (All 0) -&gt; Net ID</li>
+                    <li>10.255.255.255 -&gt; Reservada (All 1) -&gt; Net Broadcast</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Clases de redes
+              <ul>
+                <li>A |8|24| -&gt; 2^24 - 2 Redes disponibles
+                  <ul>
+                    <li>Empiezan con 00</li>
+                    <li>127.0.0.1 reservado para Local host / loopback</li>
+                    <li>Ejemplo: 10.0.0.0</li>
+                    <li>8 bits fijos para red</li>
+                  </ul>
+                </li>
+                <li>B |16|16| -&gt; 2^16 - 2 Redes disponibles
+                  <ul>
+                    <li>Empieza con 10</li>
+                    <li>Ejemplo: 128.75.0.0</li>
+                    <li>16 bits fijos para red</li>
+                  </ul>
+                </li>
+                <li>C |24|8| -&gt; 2^8 - 2 Redes disponibles
+                  <ul>
+                    <li>Empiezan con 110</li>
+                    <li>Ejemplo: 192.0.2.0</li>
+                    <li>24 bits fijos para red</li>
+                  </ul>
+                </li>
+                <li></li>
+              </ul>
+            </li>
+            <li>Mascara de subred
+              <ul>
+                <li>Cubre una parte de la IP del host</li>
+                <li>Permite creas subredes</li>
+                <li>Se pueden crear en multiplos de 2, (2, 4, 8, 16, 32)</li>
+                <li>Ejemplo:
+                  <ul>
+                    <li>Clase B
+                      <ul>
+                        <li>132.10.0.0</li>
+                        <li>255.255.0.0 -&gt; Mascara natural ( /16 -&gt; indica cuantos bits se cubren usando una operacion AND)</li>
+                        <li>255.255.192.0 -&gt; Mascara /18 -&gt; 4 subredes
+                          <ul>
+                            <li>132.10.0.0 -&gt; 132.10.63.255.255</li>
+                            <li>132.10.64.0 -&gt; 132.10.127.255</li>
+                            <li>132.10.128.0 -&gt; 132.10.191.255</li>
+                            <li>132.10.192.0 -&gt; 132.10.255.255</li>
+                          </ul>
+                        </li>
+                        <li>255.255.240.0 -&gt; Mascara /20 -&gt; 16 subredes
+                          <ul>
+                            <li>132.10.0.0 -&gt; 132.10.15.255</li>
+                            <li>132.10.16.0</li>
+                            <li>132.10.32.0</li>
+                            <li>132.10.48.0</li>
+                            <li>132.10.64.0</li>
+                            <li>132.10.80.0</li>
+                            <li>132.10.96.0</li>
+                            <li>..|..
+                              <p>							    v
+                                <br />
+</p>
+                            </li>
+                            <li>132.10.240.0 -&gt; 132.10.255.255</li>
+                          </ul>
+                        </li>
+                        <li>255.255.255.128 -&gt; Mascara /25 -&gt; 512 subredes
+                          <ul>
+                            <li>132.10.0.0 -&gt; 132.10.0.127</li>
+                            <li>132.10.0.128 -&gt; 132.10.0.255</li>
+                            <li>132.10.1.0 -&gt; 132.10.1.127</li>
+                            <li>132.10.1.128 -&gt; 132.10.1.255</li>
+                            <li>132.10.2.0 -&gt; 132.10.2.127</li>
+                            <li>|
+                              <p>							  v
+                                <br />
+</p>
+                            </li>
+                            <li>132.10.255.0 -&gt; 132.10.255.127</li>
+                            <li>132.10.255.128 -&gt; 132.10.255.255</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>Clase C
+                      <ul>
+                        <li>193.10.15.0</li>
+                        <li></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>IPv6
+          <ul>
+            <li>128 bits</li>
+            <li>Dividido en red y host</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li></li>
+    <li>Probabilidad y Estadistica
+      <ul>
+        <li>Origen
+          <ul>
+            <li>Estadistica proviene de statisticum collegium (&quot;consejo de Estado&quot;)</li>
+            <li>Origen relacionado con el gobierno</li>
+          </ul>
+        </li>
+        <li>Estadistica
+          <ul>
+            <li>Es la ciencia que recolecta, organiza, presenta, analiza e interpreta datos para permitir una mejor toma de decisiones</li>
+            <li>Descriptiva
+              <ul>
+                <li>Metodos de organizar, resumir y presentar datos.</li>
+              </ul>
+            </li>
+            <li>Inferencial
+              <ul>
+                <li>Decision, estimado, prediccion o generalizacion de una poblacion basada en una muestra.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Una muestra es una porcion de la poblacion de interes</li>
+        <li>Tipos de variables
+          <ul>
+            <li>Cualitativa o atributiva
+              <ul>
+                <li>La caracteristica que se estudia es no numérica</li>
+              </ul>
+            </li>
+            <li>Cuantitativa
+              <ul>
+                <li>La informacion es reportada de manera numerica</li>
+                <li>Discreta
+                  <ul>
+                    <li>Solo asume ciertos valores</li>
+                  </ul>
+                </li>
+                <li>Continua
+                  <ul>
+                    <li>Puede asumir cualquier valor en un rango</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Nominal Level Data
+          <ul>
+            <li>Observations of a qualitative variable can be classified and counted</li>
+            <li>No particular order</li>
+          </ul>
+        </li>
+        <li>Ordinal Level Data
+          <ul>
+            <li>Classifications are represented by sets of labels or names that have relative values (high, medium, low)</li>
+            <li>The data classified can be ranked or ordered</li>
+          </ul>
+        </li>
+        <li>Interval Level Data
+          <ul>
+            <li>Data classifications are otdered according to the amount of charasteristics they possess</li>
+            <li>Equal differences are represented by equal differences in the measurements</li>
+          </ul>
+        </li>
+        <li>Ratio Level Data
+          <ul>
+            <li>Data classifications are ordered according to the amount of the characteristics they possess</li>
+            <li>Equal differences in the characteristic are represented by equal differences in the numbers assigned to the classifications</li>
+            <li>Zero is the absence of the characteristic and the ratio between two numbers is meaningful</li>
+          </ul>
+        </li>
+        <li>Ejercicios
+          <ul>
+            <li><a href="#-2e--2e--2f-assets-2f-ejercicio_18_enero_proba_1674065485284_0-2e-docx">../assets/ejercicio_18_enero_proba_1674065485284_0.docx</a></li>
+          </ul>
+        </li>
+        <li>Tabla de Frecuencias
+          <ul>
+            <li>Cuantitativo</li>
+          </ul>
+        </li>
+        <li>Grafica de Barras
+          <ul>
+            <li>Cualitativo</li>
+          </ul>
+        </li>
+        <li>Grafica de Pie
+          <ul>
+            <li>Cualitativo</li>
+          </ul>
+        </li>
+        <li>Como construir una Tabla de Frecuencias
+          <ul>
+            <li><img src="../assets/image_1674067006278_0.png" title="image.png" /></li>
+            <li><img src="../assets/image_1674066959615_0.png" title="image.png" /></li>
+            <li><img src="../assets/image_1674066977115_0.png" title="image.png" /></li>
+          </ul>
+        </li>
+        <li>Frecuencia relativa de clase</li>
+        <li>Las frecuencias de clase pueden ser convertidas a frecuencias relativas de clase que muestran la porcion del numero total de observaciones en cada clase</li>
+        <li>La frecuencia relativa captura la relacion entre el total de clase y el total de frecuencias</li>
+      </ul>
+    </li>
+    <li></li>
+    <li>Introduccion a Sistemas Computacionales
+      <ul>
+        <li>Introduccion y presentacion</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
